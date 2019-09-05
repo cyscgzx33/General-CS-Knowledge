@@ -12,7 +12,7 @@
 
 # Useful C/C++ Programming Knowledge
 
-## C++ 'typename' keyword
+## C++ `typename` keyword
 * [My understanding] Before a ***qualified dependent*** type, we need `typename`
     * For example:
     ```
@@ -24,7 +24,7 @@
     ```
 *  [Reference] http://pages.cs.wisc.edu/~driscoll/typename.html
 
-## Rvalue Reference w/ "&&" Operator
+## Rvalue Reference w/ `&&` Operator
 * [My understanding] Compared to `C++03` reference (now called an lvalue reference in `C++11`), the rvalue reference can bind to an rvalue like a temporay without having to be `const`. 
     * `&&` is normally only used to declare a parameter of a function, and it only takes an r-value expression, 
     * Another *cheating* way of understanding is, an rvalue is a value doesn't have a memory address. For example:
@@ -48,3 +48,24 @@
     T&& r = T();
     ```
 * [Reference] https://www.tutorialspoint.com/What-is-double-address-operator-and-and-in-Cplusplus, https://stackoverflow.com/questions/5481539/what-does-t-double-ampersand-mean-in-c11
+
+## Generic Pointer `void*` in C/C++
+* [My understanding] A void pointer is a pointer that has no associated data type with it. A void pointer can hold address of any type and can be typcasted to any type.
+    * One can type cast `void*` to other types, such as `double*`
+    ```
+    void* num_ptr;
+    double* double_ptr = (double*)num_ptr;
+    // or all-in-one definition
+    double n = *(double*)num_ptr;
+    ```
+    * A conplicated example, `void* (*routine)(void*)`, it declares `routine`, which is a pointer to a function taking a single parameter of type `void*` and returning the type `void*`, the detailed version of explanation:
+    (for practical execution of the idea, please check [src/generic_function_pointer])
+    ```
+            routine             -- routine
+           *routine             -- is a pointer
+          (*routine)(      )    -- to a function
+          (*routine)(void *)    -- taking a single parameter of type void *
+         *(*routine)(void *)    -- returning a pointer
+    void *(*routine)(void *)    -- to void    
+    ```
+    (for practical execution of the idea, please check [src/generic_function_pointer])
