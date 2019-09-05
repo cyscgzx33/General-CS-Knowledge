@@ -59,7 +59,7 @@
     double n = *(double*)num_ptr;
     ```
     * A conplicated example, `void* (*routine)(void*)`, it declares `routine`, which is a pointer to a function taking a single parameter of type `void*` and returning the type `void*`, the detailed version of explanation:
-    (for practical execution of the idea, please check [src/generic_function_pointer])
+    (for practical execution of the idea, please check [src/generic_function_pointer]https://github.com/cyscgzx33/general-cs-knowledge/blob/master/src-cpp-knowledge/generic_fucntion_pointer.c)
     ```
             routine             -- routine
            *routine             -- is a pointer

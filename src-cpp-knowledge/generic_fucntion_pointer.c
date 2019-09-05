@@ -36,8 +36,8 @@ void dummyInvoker2( void* (*dummy_func_ptr)(void*) )
 int main(void)
 {
 	dummyFuncPtr example_func_ptr = &dummyFunc;  // create a function pointer
-												 // '&' is actually redundant,
-												 // w/o '&' it's also legal
+                                                 // '&' is actually redundant,
+                                                 // w/o '&' it's also legal
 	dummyInvoker(example_func_ptr);
 	dummyInvoker2(&dummyFunc2);
 	return 0;
