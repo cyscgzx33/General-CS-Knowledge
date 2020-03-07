@@ -69,3 +69,7 @@
     void *(*routine)(void *)    -- to void    
     ```
 * [Reference] https://stackoverflow.com/questions/12700384/convert-void-to-double/12700631#12700631, https://stackoverflow.com/questions/21411113/what-does-void-routinevoid-mean-in-c
+
+
+## STD I/O in C/C++
+* [Reference] [Reading and Wring Through CSV Files](https://www.gormanalysis.com/blog/reading-and-writing-csv-files-with-cpp/), [I/O STL Library](https://www.learncpp.com/cpp-tutorial/181-input-and-output-io-streams/)
