@@ -87,7 +87,7 @@
     st                                              st          st
     [Loop starts]  ----------------------->     [Loop ends]   [one more step after loop ends]
     ```
-    * Ultimately, it is equivalent to (Credits to ***Patrick Schluter*** :thumsup:, listed in the reference StackOverflow page) 
+    * Ultimately, it is equivalent to (Credits to ***Patrick Schluter*** :thumbsup:, listed in the reference StackOverflow page) 
     ```C++
     char tmp = 0;
     do {
@@ -98,4 +98,4 @@
     } while(tmp);
     ```
 * [Example src code] check [src code](../src-cpp-knowledge/char_array/test_copy_char_array.cpp)
-* [Reference] [StackOverflow Explanation](https://stackoverflow.com/questions/810129/how-does-whiles-t-copy-a-string), [C Operator Precedence](https://en.cppreference.com/w/c/language/operator_precedence), [ASCII Code](https://www.ascii-code.com/)
+* [Reference] [StackOverflow Explanation](https://stackoverflow.com/questions/810129/how-does-whiles-t-copy-a-string), [C Operator Precedence](https://en.cppreference.com/w/c/language/operator_precedence), [ASCII Code](https://www.ascii-code.com/), [Answer from Zhihu member Random](https://www.zhihu.com/question/374981194/answer/1046853032?utm_source=wechat_session&utm_medium=social&utm_oi=1057058855837671425&from=singlemessage&isappinstalled=0) 

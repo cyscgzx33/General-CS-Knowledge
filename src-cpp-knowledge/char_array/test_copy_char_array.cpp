@@ -17,6 +17,7 @@ void myStrcpy(char* s, char* t)
 
 void myStrcpy2(char*s, char* t)
 {
+  // Todo: finish this experiment
   while(*++s = *++t);
   // explanation:
   // 
