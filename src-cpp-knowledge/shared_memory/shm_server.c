@@ -17,8 +17,8 @@ int main()
      * We'll name our shared memory segment
      * "5678".
      */
-    // key = 5678;
-    key = ftok("shmfile",65);
+    key = 5678;
+    // key = ftok("shmfile",65); // no need to "deliberately assign a file"
 
     /*
      * Create the segment.

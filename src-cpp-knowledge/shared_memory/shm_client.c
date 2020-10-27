@@ -19,9 +19,8 @@ int main()
      * We need to get the segment named
      * "5678", created by the server.
      */
-
-    // key = 5678;
-    key = ftok("shmfile",65);
+    key = 5678;
+    // key = ftok("shmfile",65); // no need to "deliberately assign a file"
 
     /*
      * Locate the segment.
