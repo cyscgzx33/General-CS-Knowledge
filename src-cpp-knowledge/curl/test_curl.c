@@ -3,11 +3,11 @@
 #include <stdlib.h>
 #include <string.h>
 #define INIT_BUF_SIZE 10
+
 /* 
  * A sample downloadable picture:
  *     https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Nusfjord_road%2C_2010_09.jpg/1280px-Nusfjord_road%2C_2010_09.jpg
  */
-
 
 struct memory {
     char *response;
@@ -16,7 +16,6 @@ struct memory {
 
 static size_t writeCallback(void *data, size_t size, size_t nmemb, void *userp)
 {
-
     size_t realsize = size * nmemb;
     struct memory *mem = (struct memory *)userp;
 
@@ -73,8 +72,6 @@ void testWriteFunc(char* web_url) {
     /* we pass our 'chunk' struct to the callback function */
     curl_easy_setopt(curl, CURLOPT_WRITEDATA, (void *)&chunk);
 
-    printf("hello2\n");
-
     total_recv_len = 0;
     printf("total_recv_len = %ld, file_len = %ld\n", total_recv_len, file_len);
     while (total_recv_len < file_len) {
@@ -89,13 +86,10 @@ void testWriteFunc(char* web_url) {
             break;
         }
 
-        // printf("chunk.response: %s\n", chunk.response);
-        
         total_recv_len += recv_len;
         printf("total_recv_len = %ld\n", total_recv_len);
     }
 
-    printf("hello3\n");
     curl_easy_cleanup(curl);
 }
 
