@@ -25,9 +25,17 @@ foo* foo_create() {
     return foo_t;
 }
 
+void set_lptr(foo** foo_p) {
+    (*foo_p)->lptr = (struct addrinfo*)malloc(sizeof(struct addrinfo));
+    printf("allocated size = %ld\n", sizeof(struct addrinfo));
+
+}
+
 int main() {
 
     foo* foo_t = foo_create();
+
+    set_lptr(&foo_t);
 
     return 0;
 }
