@@ -13,7 +13,6 @@
 // Reference: lecture notes in P3L3-14
 typedef struct {
   int m;
-  char buf[200];
 } shm_data_t;
 
 int main()
@@ -29,7 +28,6 @@ int main()
      */
     key = 5678;
     // key = ftok("shmfile",65); // no need to "deliberately assign a file"
-
     /*
      * Locate the segment.
      */
@@ -41,17 +39,16 @@ int main()
     /*
      * Now we attach the segment to our data space.
      */
-    if ((shm = shmat(shmid, NULL, 0)) == (void *) -1) {
+    if ((shm = shmat(shmid, NULL, 0)) == (char *) -1) {
         perror("shmat");
         exit(1);
     }
-
     addr = (shm_data_t*)shm;
 
     /*
      * Now read what the server put in the memory.
      */
-    for (s = addr->buf; *s != NULL; s++)
+    for (s = (char*)addr + sizeof(int); *s != NULL; s++)
         putchar(*s);
     putchar('\n');
 

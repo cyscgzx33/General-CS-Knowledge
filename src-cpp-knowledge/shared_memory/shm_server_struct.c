@@ -10,7 +10,6 @@
 // Reference: lecture notes in P3L3-14
 typedef struct {
   int m;
-  char buf[200];
 } shm_data_t;
 
 int main()
@@ -43,14 +42,13 @@ int main()
         perror("shmat");
         exit(1);
     }
-
     addr = (shm_data_t*)shm;
 
     /*
      * Now put some things into the memory for the
      * other process to read.
      */
-    s = addr->buf;
+    s = (char*)addr +sizeof(int);
 
     for (c = 'a'; c <= 'z'; c++)
         *s++ = c;
